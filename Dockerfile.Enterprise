@@ -20,6 +20,10 @@ COPY templates/resetPassword.json \
      /app/javascript/dashboard/i18n/locale/es/resetPassword.json
 
 RUN apk add --no-cache multirun postgresql-client
+RUN cd /app \
+ && yarn install --frozen-lockfile \
+ && NODE_ENV=production RAILS_ENV=production \
+    bundle exec rails assets:clobber assets:precompile
 
 COPY --chmod=755 start.sh ./
 

@@ -10,6 +10,8 @@ COPY templates/password_change.html.erb \
      /app/views/devise/mailer/password_change.html.erb
 COPY templates/reset_password_instructions.html.erb \
      /app/views/devise/mailer/reset_password_instructions.html.erb
+COPY templates/base.liquid \
+     /app/views/layouts/mailer/base.liquid
 
 RUN apk add --no-cache multirun postgresql-client
 

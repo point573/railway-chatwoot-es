@@ -19,6 +19,9 @@ COPY templates/login.json \
 COPY templates/resetPassword.json \
      /app/public/dashboard/i18n/locale/es/resetPassword.json
 
+# Copiar el logo:
+COPY templates/brand-assets/logo.svg       /app/public/brand-assets/logo.svg
+
 RUN apk add --no-cache multirun postgresql-client
 
 COPY --chmod=755 start.sh ./

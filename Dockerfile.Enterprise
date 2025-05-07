@@ -14,6 +14,10 @@ COPY templates/base.liquid \
      /app/views/layouts/mailer/base.liquid
 COPY templates/devise.en.yml \
      /config/locales/devise.en.yml
+COPY templates/login.json \
+     /app/javascript/dashboard/i18n/locale/es/login.json
+COPY templates/resetPassword.json \
+     /app/javascript/dashboard/i18n/locale/es/resetPassword.json
 
 RUN apk add --no-cache multirun postgresql-client
 

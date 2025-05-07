@@ -10,17 +10,14 @@ COPY templates/password_change.html.erb \
      /app/views/devise/mailer/password_change.html.erb
 COPY templates/reset_password_instructions.html.erb \
      /app/views/devise/mailer/reset_password_instructions.html.erb
+
+# Layout base.liquid
 COPY templates/base.liquid \
      /app/views/layouts/mailer/base.liquid
-COPY templates/devise.en.yml \
-     /config/locales/devise.en.yml
-COPY templates/login.json \
-     /app/public/dashboard/i18n/locale/es/login.json
-COPY templates/resetPassword.json \
-     /app/public/dashboard/i18n/locale/es/resetPassword.json
 
-# Copiar el logo:
-COPY templates/brand-assets/logo.svg       /app/public/brand-assets/logo.svg
+# Traducciones de backend (Rails)
+COPY templates/devise.en.yml \
+     /app/config/locales/devise.en.yml
 
 RUN apk add --no-cache multirun postgresql-client
 

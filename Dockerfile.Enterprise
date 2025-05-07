@@ -10,6 +10,15 @@ COPY templates/password_change.html.erb \
      /app/app/views/devise/mailer/password_change.html.erb
 COPY templates/reset_password_instructions.html.erb \
      /app/app/views/devise/mailer/reset_password_instructions.html.erb
+# Inyectamos correos traducidos
+COPY templates/confirmation_instructions.html.erb \
+     /app/views/devise/mailer/confirmation_instructions.html.erb
+COPY templates/unlock_instructions.html.erb \
+     /app/views/devise/mailer/unlock_instructions.html.erb
+COPY templates/password_change.html.erb \
+     /app/views/devise/mailer/password_change.html.erb
+COPY templates/reset_password_instructions.html.erb \
+     /app/views/devise/mailer/reset_password_instructions.html.erb
 
 RUN apk add --no-cache multirun postgresql-client
 
